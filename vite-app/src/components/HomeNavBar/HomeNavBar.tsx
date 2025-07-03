@@ -3,7 +3,7 @@
 import {Navbar, Nav, NavbarBrand, NavLink} from 'react-bootstrap';
 import styles from './HomeNavBar.module.css';
 import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
-import { useNavigate, useLocation } from 'react-router-dom';
+// import { useNavigate, useLocation } from 'react-router-dom';
 
 
 function HomeNavBar() {

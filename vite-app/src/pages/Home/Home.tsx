@@ -16,7 +16,7 @@ function Home() {
                     <div className={styles.textSection}>
                         <h1 className={styles.heading}>Welcome to MediData</h1>
                         <p className={styles.subtext}>Your health, organized and accessible.</p>
-                        <button className={styles.getStartedBtn}>Getting Started</button>
+                        <button className={styles.getStartedBtn}>Get Started</button>
                     </div>
                 </div>
             </div>
