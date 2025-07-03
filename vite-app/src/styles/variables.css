@@ -1,0 +1,18 @@
+/* Global Variables */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-primary: #3e2a86;
+    --color-secondary: #ffffff;
+    --color-tertiary: #000000;
+    --color-text: #646cff;
+    --color-accent: #ff4c61;
+    --font-family-base: 'Lexend Deca', sans-serif;
+    --font-size-base: 16px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --border-radius: 4px;
+}

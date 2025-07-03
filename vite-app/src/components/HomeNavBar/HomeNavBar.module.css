@@ -1,0 +1,61 @@
+/* HomeNavBar.css */
+
+@import '../../styles/variables.css';
+
+.HomeNavBar {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-family: var(--font-family-base);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbrand {
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.logo {
+    display: inline-flex;
+    color: var(--color-accent);
+    margin-right: 0.5rem;
+    font-size: 1.7rem; /* Adjust size as needed */
+    position: relative;
+    top: .4rem;
+}
+
+.navlink {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: var(--spacing-lg);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.navbar:hover {
+    color: var(--color-accent);
+}
+
+.navlink:hover {
+    color: var(--color-accent);
+}
