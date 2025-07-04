@@ -1,0 +1,159 @@
+/* LoginForm.module.css */
+
+.loginFormContainer {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-family-base);
+    width: 100%;
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    background: var(--color-secondary);
+    border-radius: 1.5vw;
+    box-shadow: 0 2px 8px rgba(62, 42, 134, 0.04);
+}
+
+.roleSelector {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--color-quaternary);
+    border-radius: .6em;
+    overflow: hidden;
+    /* justify-content: center;
+    gap: var(--spacing-md); */
+    margin-bottom: var(--spacing-lg);
+}
+
+.roleSelector:before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: calc(100% / 2);
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 0.6em;
+    transition: transform 0.3s ease;
+    transform: translateX(var(--indicator-x, 0%));
+    z-index: 0;
+}
+
+.roleButton {
+    position: relative;
+    z-index: 1;
+    background: none;
+    border: none;
+    padding: 0.8em 2.5em;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.roleButton.active {
+    color: var(--color-secondary);
+}
+
+.roleButton:focus,
+.submitButton:focus {
+    outline: 2px solid var(--color-quaternary);
+    outline-offset: 2px;
+}
+
+.form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+}
+
+.formGroup {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.formGroup label {
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-bottom: 2px;
+    font-size: 1rem;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 0.6em 1em;
+    border: 1.5px solid var(--color-quaternary);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--color-primary);
+    background: var(--color-secondary);
+    font-family: var(--font-family-base);
+    transition: border 0.2s, box-shadow 0.2s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-quaternary);
+}
+
+.formGroup input:hover,
+.formGroup select:hover {
+    border-color: var(--color-text);
+}
+
+.fullWidth {
+    grid-column: 1 / -1;
+}
+
+.submitWrapper {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+.submitButton {
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    border: none;
+    border-radius: .6em;
+    padding: 0.75em 2em;
+    font-family: var(--font-family-base);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(62, 42, 134, 0.1);
+}
+
+.submitButton:hover {
+    background: var(--color-accent);
+}
+
+.submitButton:active {
+    box-shadow: 0 1px 2px rgba(62, 42, 134, 0.2);
+}
+
+.formDivider {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    border-bottom: 1.5px solid var(--color-quaternary);
+    padding-bottom: 2px;
+    grid-column: 1 / -1;
+    margin: var(--spacing-md) 0 var(--spacing-xs) 0;
+    background: none;
+}
+
+
+@media (max-width: 700px) {
+    .form {
+        grid-template-columns: 1fr;
+        max-width: 98vw;
+        padding: 0 2vw;
+    }
+}

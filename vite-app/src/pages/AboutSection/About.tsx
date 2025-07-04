@@ -1,7 +1,7 @@
 /* About.tsx */
 
 import styles from "./About.module.css"
-import HomeNavBar from "../HomeNavBar/HomeNavBar"
+import HomeNavBar from "../../components/HomeNavBar/HomeNavBar"
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital'; // For doctors
 import SecurityIcon       from '@mui/icons-material/Security'; // first bullet
 import DeviceHubIcon      from '@mui/icons-material/DeviceHub'; // second bullet

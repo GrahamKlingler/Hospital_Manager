@@ -4,8 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // import './index.css'
 import './styles/main.css'
 import Home from './pages/Home/Home.tsx'
-import About from './components/AboutSection/About.tsx'
-import SignIn from './components/SignIn/SignIn.tsx'
+import About from './pages/AboutSection/About.tsx'
+import SignIn from './pages/SignIn/SignIn.tsx'
+import SignUp from './pages/SignUp/SignUp.tsx'
 
 function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/signin" element={<SignIn />} />
+      <Route path="/create-account" element={<SignUp />} />
     </Routes>
   )
 }
