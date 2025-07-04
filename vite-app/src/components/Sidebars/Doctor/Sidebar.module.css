@@ -1,0 +1,55 @@
+/* Sidebar.module.css */
+
+/* Container */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--color-secondary);
+    padding: 1rem 0;
+}
+
+/* Groups */
+.menu,
+.menuBottom {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual item */
+.sidebarItem {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    background-color: var(--color-secondary);
+    color: grey;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0.4rem;
+}
+
+/* Spacing between items */
+.sidebarItem+.sidebarItem {
+    margin-top: 0.25rem;
+}
+
+/* Icon styling */
+.icon {
+    margin-right: 0.75rem;
+    font-size: 1.4rem;
+}
+
+/* Text label */
+.label {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Selected state */
+.selected {
+    background-color: var(--color-quaternary);
+    color: var(--color-secondary);
+    border-radius: 0.4rem;
+}

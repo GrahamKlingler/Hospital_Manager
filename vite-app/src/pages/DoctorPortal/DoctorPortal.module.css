@@ -1,0 +1,25 @@
+/* DoctorPortal.module.css */
+
+.portalContainer {
+    background-color: var(--color-secondary);
+    padding-left: 0.4rem;
+}
+
+.topBar {
+    background-color: var(--color-secondary);
+    padding-top: 0.3rem;
+}
+
+.topLeftBrand {
+    color: var(--color-primary);
+    font-family: var(--font-family-base);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding-left: 0.3rem;
+}
+
+.brandIcon {
+    font-size: 2.2rem !important;
+    color: var(--color-accent);
+}
