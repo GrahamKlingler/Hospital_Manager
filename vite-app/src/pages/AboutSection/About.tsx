@@ -18,7 +18,7 @@ function About() {
         <>
             <HomeNavBar/>
             <div className={styles.aboutContainer}>
-                <h1 className={styles.pageHeader}>About MediData</h1>
+                <h1 className={styles.pageHeader}>Meet MediData</h1>
                 <div className={styles.sectionsRow}>
                     <section className={styles.section}>
                         <h2 className={styles.sectionTitle}><LocalHospitalIcon className={styles.sectionIconSvg} /> Provider Tools</h2>
