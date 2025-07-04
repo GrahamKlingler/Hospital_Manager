@@ -13,7 +13,9 @@ function Portal() {
                     <h1>MediData</h1>
                 </div>
             </div>
-            <Sidebar/>
+            <div className={styles.contentContainer}>
+                <Sidebar/>
+            </div>
         </div>
     );
 }
