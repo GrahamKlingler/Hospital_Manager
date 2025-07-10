@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Sidebar.module.css";
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import PeopleIcon from "@mui/icons-material/People";
