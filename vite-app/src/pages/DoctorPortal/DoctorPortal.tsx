@@ -15,8 +15,10 @@ function Portal() {
             </div>
             <div className={styles.contentContainer}>
                 <Sidebar/>
-                <div className={styles.overviewContainer}>
-                    <h1>Hello</h1>
+                <div className={styles.mainContainer}>
+                    <div className={styles.overviewContainer}>
+                        <h1>Daily Overview</h1>
+                    </div>
                 </div>
             </div>
         </div>
