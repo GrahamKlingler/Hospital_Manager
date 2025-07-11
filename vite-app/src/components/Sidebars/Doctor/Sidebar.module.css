@@ -27,7 +27,7 @@
     background-color: var(--color-secondary);
     color: grey;
     transition: background 0.2s, color 0.2s;
-    border-radius: 0.6rem;
+    border-radius: var(--border-rad-default);
 }
 
 /* Spacing between items */
@@ -51,5 +51,5 @@
 .selected {
     background-color: var(--color-quaternary);
     color: var(--color-secondary);
-    border-radius: 0.6rem;
+    border-radius: var(--border-rad-default);
 }

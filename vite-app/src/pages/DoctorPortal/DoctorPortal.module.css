@@ -10,8 +10,9 @@
 
 .topBar {
     background-color: var(--color-secondary);
-    padding: 0.3rem 0 0.3rem;
+    padding: 1rem 0;
     margin-bottom: 0.5rem;
+    padding-left: 0.7rem;
 }
 
 .topLeftBrand {
@@ -20,7 +21,10 @@
     display: flex;
     align-items: center;
     gap: 0.5em;
-    padding-left: 0.7rem;
+}
+
+.topLeftBrand h1 {
+    font-weight: 400;
 }
 
 .brandIcon {
@@ -34,14 +38,69 @@
 }
 
 .mainContainer {
-    background-color: #edf5f8;
+    background-color: var(--color-bg-grey);
     width: 100%;
-    padding-left: 0.4rem;
-    border-radius: 0.4rem;
+    padding: 1rem 0.5rem;
+    border-radius: var(--border-rad-default);
 }
 
 .overviewContainer {
-    padding: 0.3rem;
-    font-weight: lighter;
+    padding: 0.5rem 1rem;
+    font-family: var(--font-family-base);
     color: var(--color-tertiary);
 }
+
+.overviewContainer h1 {
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+}
+
+.overviewTabs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 1rem;
+}
+
+.overviewTile {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--border-rad-default);
+    background-color: var(--color-secondary);
+    flex: 1;
+}
+
+.iconBox {
+    display: flex;
+    align-items: center;
+}
+
+.itemIcon {
+    font-size: 2.2rem !important;
+}
+
+.tileTextBox {
+    display: flex;
+    flex-direction: column;
+    padding: 0.3rem 1rem;
+}
+
+.tileCount {
+    font-family: var(--font-family-base);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    color: var(--color-tertiary);
+}
+
+.tileLabel {
+    font-family: var(--font-family-base);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.57;
+    margin: 0;
+    color: var(--color-primary);
+}
+
