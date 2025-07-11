@@ -45,6 +45,7 @@
 }
 
 .overviewContainer {
+    --section-space: 1.7rem;
     padding: 0.5rem 1rem;
     font-family: var(--font-family-base);
     color: var(--color-tertiary);
@@ -60,6 +61,7 @@
     flex-direction: row;
     width: 100%;
     gap: 1rem;
+    padding-bottom: var(--section-space);
 }
 
 .overviewTile {
@@ -69,6 +71,14 @@
     border-radius: var(--border-rad-default);
     background-color: var(--color-secondary);
     flex: 1;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.overviewTile:hover {
+    /* box-shadow: 0 4px 16px rgba(0,0,0,0.10), 0 1.5px 6px rgba(0,0,0,0.08); */
+    transform: translateY(-2px) scale(1.02);
+    background-color: var(--color-hover);
+    cursor: pointer;
 }
 
 .iconBox {
@@ -102,5 +112,15 @@
     line-height: 1.57;
     margin: 0;
     color: var(--color-primary);
+}
+
+.overviewSchedule {
+    padding-bottom: var(--section-space);
+}
+
+.leftBar {
+    padding: 1rem 0.5rem;
+    height: 100%;
+    display: flex;
 }
 

@@ -9,6 +9,10 @@ import PeopleIcon from "@mui/icons-material/People";
 import ReviewIcon from "@mui/icons-material/Comment";
 import AppointmentIcon from "@mui/icons-material/Today";
 import SurgeryIcon from "@mui/icons-material/Healing";
+import Timeline from "../../components/Calendars/ScheduleView/Timeline";
+import MiniCalendar from "../../components/Calendars/MiniCalendar/MiniCalendar";
+
+import { myEvents } from "./fillerevents";
 
 type overviewItem = {
     label: string;
@@ -33,7 +37,7 @@ function Portal() {
 
             <Box className={styles.tileTextBox}>
                 <span className={styles.tileCount}>{count}</span>
-                <span className={styles.tileLabel}>{label}</span>
+                <span className={styles.tileLabel}>{label}{count != 1 ? 's' : ''}</span>
             </Box>
         </Box>
     );
@@ -52,11 +56,19 @@ function Portal() {
                     <div className={styles.overviewContainer}>
                         <h1>Daily Overview</h1>
                         <div className={styles.overviewTabs}>{items.map(renderItem)}</div>
+                        <h1>Schedule</h1>
+                        <div className={styles.overviewSchedule}>
+                            <Timeline events={myEvents}/>
+                        </div>
+                        <h1>Upcoming Appointments</h1>
+                        <div className={styles.upcomingAppoint}>
+
+                        </div>
                     </div>
                 </div>
                 <div className={styles.leftBar}>
                     <div className={styles.calendarContainer}>
-
+                        <MiniCalendar events={[]}/>
                     </div>
                     <div className={styles.notificationsContainer}>
 
