@@ -22,5 +22,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    "./src/Augments/react-big-calendar.d.ts"
+  ]
 }
