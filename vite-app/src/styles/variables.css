@@ -5,10 +5,12 @@
 :root {
     --color-primary: #3e2a86;
     --color-secondary: #ffffff;
-    --color-tertiary: #000000;
+    --color-tertiary: #222222;
     --color-quaternary: #8c91e7;
+    --color-bg-grey: #eff7fa;
     --color-text: #646cff;
     --color-accent: #ff4c61;
+    --border-rad-default: 0.6rem;
     --font-family-base: 'Lexend Deca', sans-serif;
     --font-size-base: 16px;
     --spacing-xs: 4px;
