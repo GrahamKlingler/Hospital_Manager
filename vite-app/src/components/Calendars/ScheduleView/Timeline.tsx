@@ -1,6 +1,7 @@
 import React from 'react';
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import styles from './Timeline.module.css';
 
 import { format } from 'date-fns/format';
 import { parse } from 'date-fns/parse';
@@ -26,26 +27,36 @@ interface Props {
 export default function YourCalendar({ events }: Props) {
     const now = new Date();
 
-    // 1 hour before now
+    // beginning of current hour
     const min = new Date(now);
-    min.setHours(min.getHours() - 1, 0, 0, 0);
+    min.setMinutes(0, 0, 0);
 
     // 5 hours after now
     const max = new Date(now);
     max.setHours(max.getHours() + 4, 0, 0, 0);
 
+    // Filter events to only show those within the visible range
+    const filteredEvents = events.filter(event => {
+        const eventStart = new Date(event.start);
+        const eventEnd = new Date(event.end);
+        
+        // Show event if it overlaps with the visible time range
+        return eventStart < max && eventEnd > min;
+    });
+
     return (
-        <div style={{overflow: 'hidden'}}>
+        <div className={styles.container}>
             <Calendar
                 localizer={localizer}
-                events={events}
+                events={filteredEvents}
                 toolbar={false}
                 defaultView="day"
                 views={['day']}
                 step={30}
                 timeslots={2}
                 nowIndicator
-                style={{ height: 400 }}
+                className={styles.calendar}
+                style={{ height: '25rem' }}
                 min={min}
                 max={max}
                 scrollToTime={now}

@@ -1,0 +1,174 @@
+.container {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-rad-default);
+    overflow: hidden;
+    background-color: var(--color-bg-grey);
+    color: var(--color-tertiary);
+}
+
+.calendar {
+    height: 100%;
+    background-color: var(--color-secondary);
+    border-radius: var(--border-rad-default);
+}
+
+/* Hide the header completely */
+:global(.rbc-time-header) {
+    display: none !important;
+}
+
+/* Remove all borders and grid lines */
+:global(.rbc-time-view) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+}
+
+:global(.rbc-time-header-content) {
+    border: none !important;
+}
+
+:global(.rbc-time-content) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+    position: relative !important;
+}
+
+:global(.rbc-time-gutter) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+    color: var(--color-tertiary) !important;
+    font-family: var(--font-family-base);
+    font-weight: 500 !important;
+}
+
+:global(.rbc-time-slot) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+    position: relative !important;
+}
+
+:global(.rbc-timeslot-group) {
+    border: none !important;
+}
+
+:global(.rbc-day-slot) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+}
+
+:global(.rbc-time-slot .rbc-label) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+    color: var(--color-tertiary) !important;
+    font-family: var(--font-family-base);
+    font-weight: 500 !important;
+}
+
+/* Style the current time indicator */
+:global(.rbc-current-time-indicator) {
+    background-color: var(--color-accent) !important;
+    height: 2px !important;
+    position: absolute !important;
+    z-index: 5 !important;
+    width: 100% !important;
+}
+
+/* Add a small filled circle at the beginning of the current time indicator */
+:global(.rbc-current-time-indicator)::before {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: -3px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* Ensure the time content area has proper positioning for the indicator */
+:global(.rbc-time-content) {
+    position: relative !important;
+}
+
+/* Make sure the current time indicator is positioned correctly within the time slots */
+:global(.rbc-time-slot) {
+    position: relative !important;
+}
+
+
+
+/* Remove header styling for day view */
+:global(.rbc-time-header .rbc-header) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+    color: var(--color-tertiary) !important;
+    font-family: var(--font-family-base);
+    font-weight: 600 !important;
+    padding: 8px 4px !important;
+}
+
+/* Style the time gutter labels */
+:global(.rbc-time-gutter .rbc-timeslot-group) {
+    border: none !important;
+}
+
+:global(.rbc-time-gutter .rbc-label) {
+    border: none !important;
+    background-color: var(--color-secondary) !important;
+    color: var(--color-tertiary) !important;
+    font-family: var(--font-family-base);
+    font-weight: 500 !important;
+    padding: 4px 8px !important;
+}
+
+/* Remove all remaining borders */
+:global(.rbc-time-view .rbc-row) {
+    border: none !important;
+}
+
+:global(.rbc-time-view .rbc-row-segment) {
+    border: none !important;
+}
+
+/* Style the today column */
+:global(.rbc-today) {
+    background-color: rgba(25, 118, 210, 0.1) !important;
+}
+
+/* Ensure consistent spacing */
+:global(.rbc-time-view .rbc-time-gutter) {
+    padding: 0 !important;
+}
+
+:global(.rbc-time-view .rbc-time-content) {
+    padding: 0 !important;
+}
+
+/* Style events with higher specificity */
+:global(.rbc-time-view .rbc-event) {
+    background-color: var(--color-quaternary) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 4px !important;
+    font-family: var(--font-family-base);
+    font-weight: 500 !important;
+}
+
+:global(.rbc-time-view .rbc-event-content) {
+    color: white !important;
+    font-family: var(--font-family-base);
+    font-weight: 500 !important;
+}
+
+/* Additional specificity for event styling */
+:global(.rbc-time-content .rbc-event) {
+    background-color: var(--color-quaternary) !important;
+    color: white !important;
+}
+
+:global(.rbc-day-slot .rbc-event) {
+    background-color: var(--color-quaternary) !important;
+    color: white !important;
+}
