@@ -5,6 +5,8 @@ import {parse} from 'date-fns/parse';
 import {startOfWeek} from 'date-fns/startOfWeek';
 import {getDay} from 'date-fns/getDay';
 import {enUS} from 'date-fns/locale/en-US';
+import ArrowBack from "@mui/icons-material/ArrowBackIos";
+import ArrowForward from "@mui/icons-material/ArrowForwardIos";
 
 import styles from './MiniCalendar.module.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css'; // base styles
@@ -52,9 +54,19 @@ export default function MiniCalendar({
                     {format(date, 'LLLL yyyy', { locale: enUS })}
                 </span>
                 <div className={styles.navGroup}>
-                    <button onClick={() => goTo('PREV')} className={styles.navButton}>&lt;</button>
-                    <button onClick={() => goTo('NEXT')} className={styles.navButton}>&gt;</button>
+                    <ArrowBack onClick={() => goTo('PREV')} className={styles.navButton} />
+                    <ArrowForward onClick={() => goTo('NEXT')} className={styles.navButton}/>
                 </div>
+            </div>
+        );
+    };
+
+    const CustomHeader = ({ date }: { date: Date }) => {
+        const dayNames = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
+        const dayIndex = date.getDay();
+        return (
+            <div data-label={dayNames[dayIndex]}>
+                {dayNames[dayIndex]}
             </div>
         );
     };
@@ -69,13 +81,18 @@ export default function MiniCalendar({
                 onNavigate={(d) => handleNavigate(d)}
                 views={['month']}
                 view="month"
-                components={{ toolbar: MiniToolbar }}
+                components={{ 
+                    toolbar: MiniToolbar,
+                    month: {
+                        header: CustomHeader
+                    }
+                }}
                 popup
                 selectable={false}
                 showMultiDayTimes={false}
-                dayPropGetter={() => ({ style: { padding: '4px' } })}
-                eventPropGetter={() => ({ style: { backgroundColor: '#388e3c', color: 'white', fontSize: '0.75rem' } })}
-                style={{ height: '100%' }}
+                dayPropGetter={() => ({ style: { padding: '0.1rem' } })}
+                eventPropGetter={() => ({ style: { backgroundColor: 'var(--color-primary)', color: 'black', fontSize: '0.75rem' } })}
+                style={{ height: '100%', width: '100%' }}
             />
         </div>
     );
