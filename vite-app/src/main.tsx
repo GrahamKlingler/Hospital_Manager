@@ -16,7 +16,7 @@ function AppRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/signin" element={<SignIn />} />
       <Route path="/create-account" element={<SignUp />} />
-      <Route path="/doctor-portal" element={<DoctorPortal />} />
+      <Route path="/doctor-portal/*" element={<DoctorPortal />} />
     </Routes>
   )
 }
