@@ -56,7 +56,7 @@ export default function YourCalendar({ events }: Props) {
                 timeslots={2}
                 nowIndicator
                 className={styles.calendar}
-                style={{ height: '25rem' }}
+                style={{ height: '17rem' }}
                 min={min}
                 max={max}
                 scrollToTime={now}
