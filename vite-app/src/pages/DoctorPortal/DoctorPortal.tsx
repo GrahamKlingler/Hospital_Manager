@@ -1,46 +1,32 @@
 /* DoctorPortal.tsx */
 
 import React from "react";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Sidebar from "../../components/Sidebars/Doctor/Sidebar";
 import styles from "./DoctorPortal.module.css";
-import { Box } from "@mui/material";
 import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
-import PeopleIcon from "@mui/icons-material/People";
-import ReviewIcon from "@mui/icons-material/Comment";
-import AppointmentIcon from "@mui/icons-material/Today";
-import SurgeryIcon from "@mui/icons-material/Healing";
-import Timeline from "../../components/Calendars/ScheduleView/Timeline";
-import MiniCalendar from "../../components/Calendars/MiniCalendar/MiniCalendar";
 
-import { myEvents } from "./fillerevents";
-
-type overviewItem = {
-    label: string;
-    count: number;
-    Icon: React.ElementType;
-    color: string;
-};
-
-const items: overviewItem[] = [
-    { label: "patient", count: 0, Icon: PeopleIcon, color: "#58b2fc" },
-    { label: "review", count: 0, Icon: ReviewIcon, color: "#f0b050" },
-    { label: "appointment", count: 0, Icon: AppointmentIcon, color: "#7ac27d" },
-    { label: "surgery", count: 0, Icon: SurgeryIcon, color: "#ff776d" },
-]
+// Import page components
+import {
+    Dashboard,
+    Calendar,
+    Patients,
+    StaffSchedule,
+    Doctors,
+    Departments,
+    Settings,
+    HelpCenter
+} from "./pages";
 
 function Portal() {
-    const renderItem = ({ label, count, Icon, color }: overviewItem) => (
-        <Box className={styles.overviewTile}>
-            <Box className={styles.iconBox}>
-                <Icon className={styles.itemIcon} style={{ color: color }}/>
-            </Box>
+    const navigate = useNavigate();
+    const location = useLocation();
 
-            <Box className={styles.tileTextBox}>
-                <span className={styles.tileCount}>{count}</span>
-                <span className={styles.tileLabel}>{label}{count != 1 ? 's' : ''}</span>
-            </Box>
-        </Box>
-    );
+    // Handle logout
+    const handleLogout = () => {
+        // Add logout logic here
+        navigate("/signin");
+    };
 
     return (
         <div className={styles.portalContainer}>
@@ -51,28 +37,19 @@ function Portal() {
                 </div>
             </div>
             <div className={styles.contentContainer}>
-                <Sidebar/>
+                <Sidebar currentPath={location.pathname} onLogout={handleLogout} />
                 <div className={styles.mainContainer}>
-                    <div className={styles.overviewContainer}>
-                        <h1>Daily Overview</h1>
-                        <div className={styles.overviewTabs}>{items.map(renderItem)}</div>
-                        <h1>Schedule</h1>
-                        <div className={styles.overviewSchedule}>
-                            <Timeline events={myEvents}/>
-                        </div>
-                        <h1>Upcoming Appointments</h1>
-                        <div className={styles.upcomingAppoint}>
-
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.leftBar}>
-                    <div className={styles.calendarContainer}>
-                        <MiniCalendar events={[]}/>
-                    </div>
-                    <div className={styles.notificationsContainer}>
-
-                    </div>
+                    <Routes>
+                        <Route path="/" element={<Dashboard />} />
+                        <Route path="dashboard" element={<Dashboard />} />
+                        <Route path="calendar" element={<Calendar />} />
+                        <Route path="patients" element={<Patients />} />
+                        <Route path="staff" element={<StaffSchedule />} />
+                        <Route path="doctors" element={<Doctors />} />
+                        <Route path="departments" element={<Departments />} />
+                        <Route path="settings" element={<Settings />} />
+                        <Route path="help" element={<HelpCenter />} />
+                    </Routes>
                 </div>
             </div>
         </div>
